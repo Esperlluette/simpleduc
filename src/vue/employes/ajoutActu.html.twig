@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajout d'Actualité
+{% endblock %}
+
+{% block body %}
+
+	<div>
+		<h1>Ajouter une actualité</h1>
+
+		<form action="index.php?page=ajoutActu" method="post" enctype="application/x-www-formurlencoded" style="margin:10px;">
+
+			<div class="form-group">
+				<label for="inputTitre" class="form-label mt-4">Titre</label>
+				<input type="text" class="form-control" name="inputTitre" aria-describedby="emailHelp" placeholder="Titre de l'actualité">
+			</div>
+			<div class="form-group">
+				<label for="exampleTextarea" class="form-label mt-4">Contenu de l'actualité</label>
+				<textarea class="form-control" name="inputContenu" rows="3"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary" name="btAjout" style="margin:10px;">Ajouter</button>
+		</form>
+	</div>
+{% endblock %}

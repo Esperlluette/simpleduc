@@ -1,0 +1,15 @@
+en root 
+
+cd /usr/share
+
+rm -R phpmyadmin
+
+wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz
+
+tar xvf phpMyAdmin-latest-all-languages.tar.gz
+
+mv phpMyAdmin-5.1.1-all-languages phpmyadmin
+
+chown -R www-data:www-data phpmyadmin
+
+chmod -R 755 phpmyadmin

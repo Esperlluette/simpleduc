@@ -1,0 +1,89 @@
+/*objet générique*/
+
+body {
+    margin: auto;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#bouton {
+    margin-top: 3%;
+}
+
+
+/*page de connexion*/
+
+#block_connexion {
+    margin-top: 30%;
+    margin: center;
+}
+
+#formulaires_connexion {
+    width: 50%;
+}
+
+#image_connexion {
+    background-size: cover;
+    margin-left: -2%;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/*page d'inscription'*/
+
+#formulaires_inscription {
+    margin-top: 1%;
+    width: 90%;
+}
+
+#formulaire_inscription_droite {
+    margin-top: 1%;
+    margin-right: 10%;
+}
+
+#formulaire_inscription_gauche {
+    margin-top: 1%;
+    margin-left: 10%;
+}
+
+
+/*page de profil'*/
+
+#block_profil {
+    margin-top: 8%;
+}
+
+#formulaires_profil {
+    margin-top: 2%;
+    width: 40%;
+}
+
+#image_profil {
+    margin-top: 20%;
+    width: 70%;
+    clip-path: ellipse(33% 50%);
+}
+
+
+/*page de modification de profil(RH)'*/
+
+#formulaires_modif_profil {
+    margin-top: 1%;
+    width: 90%;
+}
+
+#block_modif_profil {
+    margin-top: 2%;
+}
+
+#formulaire_modif_profil_droite {
+    margin-top: 1%;
+    margin-right: 10%;
+}
+
+#formulaire_modif_profil_gauche {
+    margin-top: 1%;
+    margin-left: 10%;
+}

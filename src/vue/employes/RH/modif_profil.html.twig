@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	    Modifier profil
+{% endblock %}
+
+{% block body %}
+	{% if form.valide is defined %}
+		{% if form.valide == true %}
+			<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Modification Réussie</div>
+  				<div class="card-body">
+    			<h4 class="card-title"></h4>
+    			<p class="card-text">Modification de {{form.nom}} réussie</p>
+  				</div>
+			</div>				
+			{% else %}
+				<h1>Echec de la modification</h1>
+				<h1>Erreur :
+					{{form.message}}</h1>
+				<h1>
+					<a href="index.php?page=modif-profil">Retourner sur la liste d'utilisateur</a>
+				</h1>
+			{% endif %}
+		{% else %} 
+        
+        
+	{% endif %}
+{% endblock %}
