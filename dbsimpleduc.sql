@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 10 mars 2022 à 15:43
+-- Généré le : jeu. 10 mars 2022 à 16:12
 -- Version du serveur : 10.3.31-MariaDB-0+deb10u1
 -- Version de PHP : 8.0.15
 
@@ -66,11 +66,11 @@ CREATE TABLE `Employe` (
 --
 
 INSERT INTO `Employe` (`id`, `Nom`, `Prenom`, `Date_de_naissance`, `Telephone`, `Mail`, `MDP`, `Adresse`, `Code_postal`, `Pays`, `Permis`, `Date_embauche`, `Num_secu`, `idQualification`, `Photo`, `confirmkey`, `confirm`) VALUES
-(12, 'test', 'comptable', '2022-03-10', '4', 'test@comptable.fr', '$2y$10$4E3jI58urbL/tF8Vti3vZObW/T0D.Y5FkqER48NSwkX0XfGsyerG2', '16 rue d\'arras', '62123', 'France', 'A', '2022-03-10', '123456', 2, NULL, '75635800645875', 0),
 (13, 'test', 'Employe', '2022-03-10', '4', 'test@employe.fr', '$2y$10$X4mp16sryPW6ZmoPI1IS2OEP/hZdH.oj5YArjN9kPBcjEBKnbdtjW', '16 rue d\'arras', '62123', 'France', '1', '2022-03-10', '1', 1, NULL, '56883275847526', 0),
 (14, 'test', 'responsable technique', '2022-03-10', '4', 'test@ressourceshumaines.fr', '$2y$10$c827el7MwHlDuxfSj87SFuq5yfcgoTusgw.lnX4SqKITYzSpmrmwm', '16 rue d\'arras', '62123', 'France', '3', '2022-03-10', '1', 3, NULL, '71357759254084', 0),
 (15, 'test', 'responsable technique', '2022-03-10', '4', 'test@responsabletechnique.fr', '$2y$10$I6e9tXWBYQwe05Ltt8rBU.VASUR.oMd7mEdeANLcJgVIpqpfqK/32', '16 rue d\'arras', '62123', '4', '4', '2022-03-10', '4', 4, NULL, '08650941184385', 0),
-(16, 'test', 'direction', '2022-03-10', '4', 'test@direction.fr', '$2y$10$bibFfZrZeCFlOFxlFJA6s.UiAnVF9RIal/uZew5a8S5ZphdajNVKO', '16 rue d\'arras', '62123', '21', '5', '2022-03-10', '1', 5, NULL, '41510763700801', 0);
+(16, 'test', 'direction', '2022-03-10', '4', 'test@direction.fr', '$2y$10$bibFfZrZeCFlOFxlFJA6s.UiAnVF9RIal/uZew5a8S5ZphdajNVKO', '16 rue d\'arras', '62123', '21', '5', '2022-03-10', '1', 5, NULL, '41510763700801', 0),
+(18, 'test', 'test', '2022-03-10', '4', 'test@comptable.fr', '$2y$10$WWFUK.Vwt1OHsBKK7/HLS.6oOAky6DE5cU4.KSRSs4jqskDD8wTBm', '16 rue d\'arras', '62123', 'France', '2', '2022-03-10', '4', 2, NULL, '42076449202375', 0);
 
 -- --------------------------------------------------------
 
@@ -169,7 +169,7 @@ ALTER TABLE `Actualite`
 -- AUTO_INCREMENT pour la table `Employe`
 --
 ALTER TABLE `Employe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `Qualification`
