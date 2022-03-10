@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 19 oct. 2021 à 14:45
--- Version du serveur : 10.3.29-MariaDB-0+deb10u1
--- Version de PHP : 8.0.10
+-- Généré le : jeu. 10 mars 2022 à 15:43
+-- Version du serveur : 10.3.31-MariaDB-0+deb10u1
+-- Version de PHP : 8.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `dbsimpleduc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Actualite`
+--
+
+CREATE TABLE `Actualite` (
+  `id` int(11) NOT NULL,
+  `titre` varchar(50) NOT NULL,
+  `contenu` varchar(160) NOT NULL,
+  `idAuteur` int(11) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -52,12 +66,11 @@ CREATE TABLE `Employe` (
 --
 
 INSERT INTO `Employe` (`id`, `Nom`, `Prenom`, `Date_de_naissance`, `Telephone`, `Mail`, `MDP`, `Adresse`, `Code_postal`, `Pays`, `Permis`, `Date_embauche`, `Num_secu`, `idQualification`, `Photo`, `confirmkey`, `confirm`) VALUES
-(3, 'oui', 'oui', '2010-01-01', '06.06.06.06.06', 'oui@oui.fr', '$2y$10$Wg.UH659XfkMbOWNh1Mxh.PQMRcN03LKuwVzWbQ4AXGPYlVSd2pOG', '8 rue oui', '62000', 'France', 'B', '2021-09-01', '0316546030', 1, NULL, '', 0),
-(5, 'non', 'non', '2014-01-01', '06.06.06.06.06', 'non@non.fr', '$2y$10$DzAyRt.I5bXnCiLDIZI5S.G9wcuCMyXqpjVb/idhyGuzoBvKKKfIm', '8 rue du refus', '62000', 'nonménistan', 'B', '2021-10-01', '650616060651063', 5, NULL, '', 0),
-(6, 'Raymond', 'Mehdi', '2001-02-06', '06.51.30.15.66', 'mehdi.raymond1@outlook.fr', '$2y$10$u9D7TO9.F/gJnKXDadbZ.eM9616YgYT0wBziTvXLpCKcEAPZ7TPQy', '8 rue des boss', '62000', 'France Askip', 'B', '2020-09-01', '506150410410420', 5, NULL, '95085230634999', 1),
-(7, 'Le bro', 'Jérémy', '2002-07-08', '06.05.05.05.05', 'lebougyvick@gmail.com', '616c5c78c3b65', '8 rue du style', '62000', 'nigeria', 'B askip', '2021-01-01', '4561613151', 2, NULL, '14237089049114', 0),
-(8, 'Le bro', 'Imrane', '0001-01-01', '06.05.05.05.04', 'mysterie62@hotmail.fr', 'OUIOUIOUI', '8 rue du style', '62000', 'Togo', 'B askip', '2021-01-01', '4561613151', 2, NULL, '76055559572210', 0),
-(10, 'fsdfsd', 'fsdfsdf', '1111-01-01', '06.06.06.06.06', 'test2@test2.fr', '$2y$10$K7po2fxiuZkguYGDZhgg0.Qq6kqQOhrQzJ.6x0axKRTwPtgn9r5fy', '8 rue du oui', '62000', 'france', 'Sans Permis', '1111-01-01', '544554324', 1, NULL, '28852177920540', 0);
+(12, 'test', 'comptable', '2022-03-10', '4', 'test@comptable.fr', '$2y$10$4E3jI58urbL/tF8Vti3vZObW/T0D.Y5FkqER48NSwkX0XfGsyerG2', '16 rue d\'arras', '62123', 'France', 'A', '2022-03-10', '123456', 2, NULL, '75635800645875', 0),
+(13, 'test', 'Employe', '2022-03-10', '4', 'test@employe.fr', '$2y$10$X4mp16sryPW6ZmoPI1IS2OEP/hZdH.oj5YArjN9kPBcjEBKnbdtjW', '16 rue d\'arras', '62123', 'France', '1', '2022-03-10', '1', 1, NULL, '56883275847526', 0),
+(14, 'test', 'responsable technique', '2022-03-10', '4', 'test@ressourceshumaines.fr', '$2y$10$c827el7MwHlDuxfSj87SFuq5yfcgoTusgw.lnX4SqKITYzSpmrmwm', '16 rue d\'arras', '62123', 'France', '3', '2022-03-10', '1', 3, NULL, '71357759254084', 0),
+(15, 'test', 'responsable technique', '2022-03-10', '4', 'test@responsabletechnique.fr', '$2y$10$I6e9tXWBYQwe05Ltt8rBU.VASUR.oMd7mEdeANLcJgVIpqpfqK/32', '16 rue d\'arras', '62123', '4', '4', '2022-03-10', '4', 4, NULL, '08650941184385', 0),
+(16, 'test', 'direction', '2022-03-10', '4', 'test@direction.fr', '$2y$10$bibFfZrZeCFlOFxlFJA6s.UiAnVF9RIal/uZew5a8S5ZphdajNVKO', '16 rue d\'arras', '62123', '21', '5', '2022-03-10', '1', 5, NULL, '41510763700801', 0);
 
 -- --------------------------------------------------------
 
@@ -115,6 +128,13 @@ INSERT INTO `Taux` (`Type`, `taux_salaire`, `taux_complementaire_sante_IDD`, `ta
 --
 
 --
+-- Index pour la table `Actualite`
+--
+ALTER TABLE `Actualite`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idAuteur` (`idAuteur`);
+
+--
 -- Index pour la table `Employe`
 --
 ALTER TABLE `Employe`
@@ -140,10 +160,16 @@ ALTER TABLE `Taux`
 --
 
 --
+-- AUTO_INCREMENT pour la table `Actualite`
+--
+ALTER TABLE `Actualite`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `Employe`
 --
 ALTER TABLE `Employe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `Qualification`
@@ -154,6 +180,12 @@ ALTER TABLE `Qualification`
 --
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `Actualite`
+--
+ALTER TABLE `Actualite`
+  ADD CONSTRAINT `Actualite_ibfk_1` FOREIGN KEY (`idAuteur`) REFERENCES `Employe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `Employe`
