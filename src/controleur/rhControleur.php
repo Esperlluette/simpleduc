@@ -23,7 +23,7 @@ function inscrireControleur($twig,$db){
         $inputPermis = $_POST['optionsRadios'];
         $inputDateEmbauche = $_POST['inputDateEmbauche'];
         $inputNumSecu = $_POST['inputNumSecu'];
-        $inputQualification = $_POST['optionsRadios2'];
+        $inputQualification = $_POST['optionsRadios'];
         $cheminPhoto = null;
         
     
