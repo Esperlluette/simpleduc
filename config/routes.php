@@ -12,7 +12,7 @@ function getPage($db){
         //routes des connectés 
         $lesPages['connexion'] = "connexionControleur";
         $lesPages['deconnexion'] = "deconnexionControleur";
-        $lesPages['actu'] = "actuControleur";
+        $lesPages['actu'] = "ajoutActuControleur";
             //developpeurs
             $lesPages['profil-developpeur'] = "profildevControleur";
 

@@ -1,6 +1,4 @@
 <?php
-
-
 function AjoutActuControleur($twig,$db){
 
     if(isset($_POST['btAjout'])){

@@ -6,6 +6,7 @@ function connexionControleur($twig,$db){
     if(isset($_POST['btConnecter'])){
         $inputEmail = $_POST['inputEmail'];
         $inputPassword = $_POST['inputPassword'];
+        var_dump($inputEmail, $inputPassword);
         $user = new User($db);
         $unUser = $user->connect($inputEmail);
         if(!password_verify($inputPassword,$unUser['MDP'])){
