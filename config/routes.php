@@ -7,6 +7,7 @@ function getPage($db){
     $lesPages['a-propos'] = "aproposControleur";
     $lesPages['contact'] = "contactControleur";
     $lesPages['confirmation'] = "confirmationControleur";
+    $lesPages['profil'] = "pageProfilControleur";
         //bdd manquante
     $lesPages['maintenance'] = "maintenanceControleur";
         //routes des connectés 
@@ -14,7 +15,6 @@ function getPage($db){
         $lesPages['deconnexion'] = "deconnexionControleur";
         $lesPages['actu'] = "ajoutActuControleur";
             //developpeurs
-            $lesPages['profil-developpeur'] = "profildevControleur";
 
             //chefs developpeurs
 
@@ -24,7 +24,6 @@ function getPage($db){
 
             //RH
             $lesPages['inscription'] = "inscrireControleur"; //le Directeur a aussi les droits de création de compte
-            $lesPages['modif-profil'] = "modif_profilControleur"; //le Directeur a aussi les droits de modification de profil, les employés peuvent modifier uniquement leurs profils.
             $lesPages['ajoutActu'] = "ajoutActuControleur";
             //Directeur
 

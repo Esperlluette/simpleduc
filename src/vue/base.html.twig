@@ -57,6 +57,8 @@
 								</li>
 							{% endif %}
 					</ul>
+					{% if session.id is defined %}
+					 
 					<ul class="navbar-nav mr-4">
 						<li class="nav-item">
 							<a class="nav-link" href="">{{session.login}}</a>
@@ -65,11 +67,12 @@
 							<a class="nav-link" href="?page=deconnexion">Se déconnecter</a>
 						</li>
 					</ul>
+					{% endif %}
 				</div>
 			</div>
 		</nav>
-
-		{% if session.confirmation == 0 %}
+			<!--Fixer le problème de mail-->
+		{% if session.confirmation == true %}
 			<div class="alert alert-dismissible alert-danger">
 				<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 				<strong>Veuillez confirmer votre Email

@@ -8,6 +8,7 @@
     require_once 'modifProfilControleur.php';
     require_once 'rhControleur.php';
     require_once 'staticControleur.php';
+    require_once 'pageProfilControleur.php';
 
 
 ?>
