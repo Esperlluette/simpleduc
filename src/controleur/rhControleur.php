@@ -1,7 +1,7 @@
 <?php
 
 function profilRhControleur($twig){
-    echo $twig->render('employe/RH/profil.html.twig');
+    echo $twig->render('employes/RH/profil.html.twig');
 }
 
 //---Controleur d'inscription---

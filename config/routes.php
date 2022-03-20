@@ -25,6 +25,7 @@ function getPage($db){
             //RH
             $lesPages['inscription'] = "inscrireControleur"; //le Directeur a aussi les droits de création de compte
             $lesPages['ajoutActu'] = "ajoutActuControleur";
+            $lesPages['liste'] = "listeControleur";
             //Directeur
 
 

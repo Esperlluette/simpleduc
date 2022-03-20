@@ -21,8 +21,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-
-
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="?page=accueil">Simpleduc</a>
@@ -32,8 +30,10 @@
 
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
+					{% if session.role is defined %}
+					
 						<li class="nav-item">
-							<a class="nav-link" href="#">Profil</a>
+							<a class="nav-link" href="?page=actu">Actualités</a>
 						</li>
 						</li>
 							{% if session.role == 2 %}
@@ -43,6 +43,9 @@
 							{% elseif session.role == 3 %}
 								<li class="nav-item">
 									<a class="nav-link" href="?page=inscription">Inscription Employe</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="?page=liste">Liste des employés</a>
 								</li>
 							{% elseif session.role == 4 %}
 
@@ -57,11 +60,12 @@
 								</li>
 							{% endif %}
 					</ul>
+					{% endif %}
 					{% if session.id is defined %}
 					 
 					<ul class="navbar-nav mr-4">
 						<li class="nav-item">
-							<a class="nav-link" href="">{{session.login}}</a>
+							<a class="nav-link" href="?page=profil">{{session.login}}</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="?page=deconnexion">Se déconnecter</a>

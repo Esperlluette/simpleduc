@@ -12,6 +12,8 @@ class Employe{
  $this->db = $db;
  $this->insert = $this->db->prepare("INSERT INTO `Employe`(`Nom`, `Prenom`, `Date_de_naissance`, `Telephone`, `Mail`, `MDP`, `Adresse`, `Code_postal`, `Pays`, `Permis`, `Date_embauche`, `Num_secu`, `idQualification`, `Photo`, `confirmkey`) VALUES (:Nom ,:Prenom, :Date_de_naissance, :Telephone, :Mail, :MDP, :Adresse, :Code_postal, :Pays, :Permis, :Date_embauche, :Num_secu, :idQualification, :Photo, :confirmkey)"); 
  $this->select = $this->db->prepare("SELECT * FROM `Employe` WHERE Nom = :Nom AND Prenom = :Prenom");
+ 
+ //à fix
  $this->confirmation = $this->db->prepare("UPDATE `Employe` SET `confirm`= 1  WHERE Nom =':Nom' AND confirmkey = :confirmkey");
 }
 
@@ -47,4 +49,3 @@ class Employe{
 
    
 }
-?>
