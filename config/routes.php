@@ -28,7 +28,8 @@ function getPage($db){
             $lesPages['liste'] = "listeControleur";
             $lesPages['update'] = "updateControleur";
             //Directeur
-
+            $lesPages['vosActu'] = "vosActuControleur";
+            $lesPages['modifActu'] = "modifActuControleur";
 
             
     if ($db!=null){  

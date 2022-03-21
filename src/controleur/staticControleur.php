@@ -10,6 +10,7 @@ function accueilControleur($twig,$db){
     $form = array();
     $actu = new Actu($db);
     $liste = $actu->select();
+    
     echo $twig->render('accueil.html.twig', array('form'=>$form,'liste'=>$liste));
 }
 

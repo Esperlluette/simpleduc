@@ -31,11 +31,6 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 					{% if session.role is defined %}
-					
-						<li class="nav-item">
-							<a class="nav-link" href="?page=actu">Actualités</a>
-						</li>
-						</li>
 							{% if session.role == 2 %}
 								<li class="nav-item">
 									<a class="nav-link" href="?page=edit-fiche-de-paie">Edit fiche de paie</a>
@@ -47,12 +42,17 @@
 								<li class="nav-item">
 									<a class="nav-link" href="?page=liste">Liste des employés</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="?page=vosActu&id={{u.id}}">Vos Actualités</a>
+								</li>
 							{% elseif session.role == 4 %}
 
 							{% elseif session.role == 5 %}
-
+								<li class="nav-item">
+									<a class="nav-link" href="?page=vosActu&id={{u.id}}">Vos Actualités</a>
+								</li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Options</a>
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Options</a>
 									<div class="dropdown-menu">
 										<a class="nav-link" href="?page=edit-fiche-de-paie">Edit fiche de paie</a>
 										<a class="nav-link" href="?page=inscription">Inscription Employe</a>

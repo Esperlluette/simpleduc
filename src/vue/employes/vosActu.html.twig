@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Accueil
+{% endblock %}
+
+{% block body %}
+	<div style="padding :10px;">
+	<center>
+		<h1>Vos Actualités</h1>
+	</center>
+
+{% if form.etat is defined %}     
+	{% if form.etat == true %}       
+	<h1 class="h3 mb-3 font-weight-normal">Suppression réussie</h1>       
+	{% else %}         
+	<h1 class="alert alert-danger" role="alert">Problème d'insertion</h1>     
+	{% endif %}         
+{% endif %}
+<form  class="form-signin" action="index.php?page=vosActu" method="post" enctype="application/x-www-form-urlencoded">
+	<table class="table table-hover">
+	<thead>
+			<tr class="table-dark">
+				<th scope="row">Titre</th>
+				<th>Contenu</th>
+				<th>Nom</th>
+				<th>Date</th>
+				<th></th>
+				<th></th>
+				<th><button type="submit" name="btSupprimer" class="rounded-pill btn btn-secondary">Supprimer</button></th>
+				<th><a href="?page=actu" class="rounded-pill btn btn-secondary">Ajouter</a></th>
+
+			</tr>
+	</thead>
+{% for u in liste %}
+		<tbody>
+			<tr class="table-dark">
+				<td scope="row">{{u.titre}}</td>
+				<td>{{u.contenu}}</td>
+				<td>{{u.Nom}}</td>
+				<td>{{u.date}}</td>
+				<td><a href="index.php?page=modifActu&id={{u.id}}">Modifier</a></td>
+				<td><a href="index.php?page=vosActu&id={{u.id}}">Supprimer</a></td>
+				<td>
+					<input type="checkbox" name="cocher[]" id="cocher[]" value="{{u.id}}"/>
+				</td>
+				<td></td>
+			</tr>
+		</tbody>
+	{% endfor %}
+	</table>
+		
+	</div>
+{% endblock %}

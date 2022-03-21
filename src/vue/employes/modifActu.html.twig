@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modif d'Actualité
+{% endblock %}
+
+{% block body %}
+
+	<div>
+		<h1>Modifier une actualités</h1>
+    {% if form.actu is defined %}     
+    {% if form.actu != null %}
+		<form action="index.php?page=modifActu&id={{id}}" method="post" enctype="application/x-www-formurlencoded" style="margin:10px;">
+
+			<div class="form-group">
+				<label for="inputTitre" class="form-label mt-4">Titre</label>
+				<input type="text" class="form-control" name="inputTitre" aria-describedby="emailHelp" placeholder="Titre de l'actualité" value="{{form.actu.titre}}">
+			</div>
+			<div class="form-group">
+				<label for="exampleTextarea" class="form-label mt-4">Contenu de l'actualité</label>
+				<textarea class="form-control" name="inputContenu" rows="3">{{form.actu.contenu}}</textarea>
+			</div>
+			<button type="submit" class="btn btn-primary" name="btmodifactu" style="margin:10px;">Modifier</button>
+		</form>
+        {% else %}        
+        <h2 class="alert alert-danger" role="alert">{{ form.message }}</h2>
+        <a href="index.php?page=vosActu">Retourner sur la liste des vos actualités</a>  
+                  {% endif %}
+                  {% else %}    
+                    <h2 class="alert alert-danger" role="alert">{{ form.message }}</h2>  
+                       <a href="index.php?page=vosActu">Retourner sur la liste des vos actualités</a>
+        {% endif %}
+	</div>
+{% endblock %}

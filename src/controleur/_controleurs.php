@@ -10,6 +10,10 @@
     require_once 'staticControleur.php';
     require_once 'pageProfilControleur.php';
     require_once 'listeControleur.php';
+<<<<<<< HEAD
     require_once 'updateControleur.php';
+=======
+    require_once 'vosActuControleur.php';
+>>>>>>> fb54ffa7109be2a940b8dcf83339ae32c577346d
 
 ?>
