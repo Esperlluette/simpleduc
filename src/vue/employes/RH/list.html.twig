@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	Liste des employés
+{% endblock %}
+{% block body %}
+	<center>
+		<h1>Liste des employés</h1>
+	</center>
+
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Email</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Prénom</th>
+					<th scope="col">Rôle</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for u in liste %}
+
+					<tr>
+						<td>{{u.Mail}}</td>
+						<td>{{u.Nom}}</td>
+						<td>{{u.Prenom}}</td>
+                        <td>{{u.idQualification}}</td>
+                        <td><a type="button" class="btn btn-secondary" href="index.php?page=update&id={{u.id}}">Modifier</a></td>
+                        <td><a type="button" class="btn btn-danger" href="index.php?page=liste&id={{u.id}}">Supprimer</a>
+					</tr>
+
+				</tbody>
+			{% endfor %}
+
+		</tbody>
+	{% endblock %}
