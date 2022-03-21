@@ -27,7 +27,8 @@ function getPage($db){
             $lesPages['ajoutActu'] = "ajoutActuControleur";
             $lesPages['liste'] = "listeControleur";
             //Directeur
-
+            $lesPages['vosActu'] = "vosActuControleur";
+            $lesPages['modifActu'] = "modifActuControleur";
 
             
     if ($db!=null){  
