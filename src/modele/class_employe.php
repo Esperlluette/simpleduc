@@ -14,20 +14,16 @@ class Employe
         $this->select = $this->db->prepare("SELECT * FROM `Employe` WHERE true");
         $this->selectById = $db->prepare("SELECT id, Mail, Nom, Prenom, idQualification from Employe WHERE id=:id");
         $this->delete = $db->prepare("DELETE FROM Employe WHERE id = :id");
-
-        $this->update = $db->prepare("UPDATE Employe set Nom =:Nom, Prenom =:Prenom, idQualification =:idQualification  WHERE id =:id");
-
+        $this->update = $db->prepare("UPDATE Employe SET Nom =:Nom, Mail =:Mail, Prenom =:Prenom, idQualification =:idQualification  WHERE id =:id");
 
 
         $this->confirmation = $this->db->prepare("UPDATE `Employe` SET `confirm`= 1  WHERE Nom =':Nom' AND confirmkey = :confirmkey");
     }
-
-    public function update($id, $role, $nom, $prenom)
+    public function update($id,$mail, $role, $nom, $prenom)
     {
         $r = true;
-        var_dump("id : $id", "role : $role", "nom : $nom","prenom : $prenom");
         $this->update->execute(array(
-            ':id' => $id, ':idQualification' => $role, ':Nom' => $nom,
+            ':id' => $id, ':Mail' => $mail, ':idQualification' => $role, ':Nom' => $nom,
             ':Prenom' => $prenom
         ));
         if ($this->update->errorCode() != 0) {

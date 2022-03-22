@@ -1,7 +1,7 @@
 <?php
+
 function updateControleur($twig, $db)
 {
-
     if (!isset($_SESSION['id'])) {
         echo $twig->render('infoConnexion.html.twig');
     } else {
@@ -32,7 +32,7 @@ function updateControleur($twig, $db)
             //      - le résultat de la methode update est un booléen et est affecté à $exec  
             //      - true si la requette à bien été exécutée.
             //      - false si la requette n'as pas été exécutée.
-            //      si $exec est vrai ------------------------------------------------------------------
+            //      si $exec est vrai -----------------------------------------------------------------
             //      alors
             //          - $form['valide'] reçoit false
             //          - $form['message'] reçoit "échec de la modification"
@@ -62,8 +62,9 @@ function updateControleur($twig, $db)
                     $nom = $_POST['nom'];
                     $prenom = $_POST['prenom'];
                     $role = $_POST['role'];
-                    $id = $_GET['id'];
-                    $exec = $employe->update($id, $role, $nom, $prenom);
+                    $id = $_POST['id'];
+                    $mail = $_POST['email'];
+                    $exec = $employe->update($id, $mail, $role, $nom, $prenom);
                     if (!$exec) {
                         $form['valide'] = false;
                         $form['message'] = 'Echec de la modification';
@@ -77,6 +78,8 @@ function updateControleur($twig, $db)
                 $form['message'] = 'Utilisateur non précisé';
             }
             echo $twig->render('employes/RH/update.html.twig', array('form' => $form, 'employe' => $unEmploye));
+        }else {
+            echo $twig->rende('accueil.html.twig');
         }
     }
 }
