@@ -15,7 +15,7 @@ class Employe
         $this->selectById = $db->prepare("SELECT id, Mail, Nom, Prenom, idQualification from Employe WHERE id=:id");
         $this->delete = $db->prepare("DELETE FROM Employe WHERE id = :id");
 
-        $this->update = $db->prepare("UPDATE Employe set Nom =:Nom, Prenom =:Prenom, idQualification =:Type  WHERE id =:id");
+        $this->update = $db->prepare("UPDATE Employe set Nom =:Nom, Prenom =:Prenom, idQualification =:idQualification  WHERE id =:id");
 
 
 
@@ -27,7 +27,7 @@ class Employe
         $r = true;
         var_dump("id : $id", "role : $role", "nom : $nom","prenom : $prenom");
         $this->update->execute(array(
-            ':id' => $id, ':Type' => $role, ':Nom' => $nom,
+            ':id' => $id, ':idQualification' => $role, ':Nom' => $nom,
             ':Prenom' => $prenom
         ));
         if ($this->update->errorCode() != 0) {
