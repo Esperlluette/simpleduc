@@ -1,22 +1,11 @@
 <?php
 function vosActuControleur($twig, $db)
 {
-    //afficher la liste des actus
+    //afficher la liste des actus en fonction de l'utilisateur connecté
     $form = array();
     $actu = new Actu($db);
-    $liste = $actu->select();
-
-  $form = array();
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $user = new User($db);
-        $unUser = $user->selectById($_GET['id']);
-        if ($unUser != null) {
-            $form['actu'] = $unUser;
-        } else {
-            $form['message'] = 'actu incorrect';
-        }
-    }
+    $id = $_SESSION['id'];
+    $liste = $actu->selectByOwner($id);
 
     //bouton de suppression multiple
     if (isset($_POST['btSupprimer'])) {

@@ -9,7 +9,6 @@
     require_once 'staticControleur.php';
     require_once 'pageProfilControleur.php';
     require_once 'listeControleur.php';
-    require_once 'updateControleur.php';
     require_once 'vosActuControleur.php';
 
 ?>

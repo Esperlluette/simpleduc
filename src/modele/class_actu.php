@@ -2,6 +2,7 @@
 class Actu
 {
     private $selectById;
+    private $selectByOwner;
     private $select;
     private $insert;
     private $update;
@@ -12,9 +13,15 @@ class Actu
         $this->select = $db->prepare("SELECT Actualite.id,titre, contenu, Nom, date
         FROM Actualite
         INNER JOIN Employe ON Actualite.idAuteur = Employe.id");
+
         $this->insert = $db->prepare("INSERT INTO Actualite(titre, contenu, idAuteur, date) VALUES (:titre,:contenu,:idAuteur,:dateT)");
-        $this->selectById  =  $db->prepare("SELECT id, titre, contenu, date from  Actualite  where id=:id");
+
+        $this->selectById = $db->prepare("SELECT id, titre, contenu, date from  Actualite  where idAuteur=:id");
+
+        $this->selectByOwner = $db->prepare("SELECT * from  Actualite where Actualite.idAuteur = :id");
+
         $this->update = $db->prepare("update  Actualite  set  titre=:titre,  contenu=:contenu, date=:date where id=:id");
+
         $this->delete = $db->prepare("delete from Actualite where id=:id");
 
     }
@@ -39,6 +46,15 @@ class Actu
         return $this->select->fetchAll();
     }
 
+    public function selectByOwner($id)
+    {
+        $this->selectByOwner->execute(array(':id'=>$id));
+        if ($this->selectByOwner->errorCode() != 0) {
+            print_r($this->selectByOwner->errorInfo());
+        }
+        return $this->selectByOwner->fetchAll();
+    }
+
     public function selectById($id){
         $this->selectById->execute(array(':id'=>$id));
         if ($this->selectById->errorCode()!=0){
@@ -57,7 +73,6 @@ class Actu
         }
         return $r;
     }
-
 
     public function update($id, $titre, $contenu, $date)
     {
