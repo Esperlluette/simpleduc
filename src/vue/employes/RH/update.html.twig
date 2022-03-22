@@ -8,16 +8,16 @@
 			<form class="form-signin" action="index.php?page=update&id={{form.id}}" method="post" enctype="application/x-www-form-urlencoded">
 				<h1 class="h3 mb-3 font-weight-normal">Modifier un utilisateur</h1>
 				<label for="inputEmail" class="sr-only">Email:</label>
-				<input type="Email" id="inputEmail" name="inputEmail" class="form-control" value="{{employe.mail}}" placeholder="Modifier votre Email:" required>
+				<input type="Email" id="inputEmail" name="inputEmail" class="form-control" value="{{form.Employe.Mail}}" placeholder="Modifier votre Email:" required>
 
 				<label for="inputPassword" class="sr-only">Modifier le mot de passe:</label>
-				<input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Modifier le mot de passe:" required>
+				<input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Modifier le mot de passe:" >
 				<label for="inputPassword2" class="sr-only">Confirmer le mot de passe à modifier:</label>
-				<input type="password" id="inputPassword2" name="inputPassword2" class="form-control" placeholder="Confirmation mot de passe" required>
+				<input type="password" id="inputPassword2" name="inputPassword2" class="form-control" placeholder="Confirmation mot de passe" >
 				<label for="nom" class="sr-only">Nom:</label>
-				<input type="text" id="nom" name="nom" class="form-control" placeholder="Nom" required>
+				<input type="text" id="nom" value="{{form.Employe.Nom}}" name="nom" class="form-control" placeholder="Nom" required>
 				<label for="prenom" class="sr-only">Prénom:</label>
-				<input type="prenom" id="prenom" name="prenom" class="form-control" placeholder="Prénom" required>
+				<input type="prenom" id="prenom" value="{{form.Employe.Prenom}}" name="prenom" class="form-control" placeholder="Prénom" required>
 
 				<label for="role" class="sr-only">Role:
 				</label>
@@ -31,6 +31,7 @@
 					{% endfor %}
 				</select>
 				<input type="hidden" name="id" value="{{ form.utilisateur.id}}"/>
+
 				<button class="btn btn-lg btn-primary btn-block" type="submit" name="btModifier">Modifier</button>
 
 			</form>
@@ -39,14 +40,12 @@
 				<h1 class="h3 mb-3 font-weight-normal">{{ form.message }}
 				</h1>
 				<h1 class="h3 mb-3 font-weight-normal">
-					<a href="index.php?page=utilisateur">Retourner
-																		sur la liste des utilisateurs</a>
+					<a href="index.php?page=liste">Retourner sur la liste des utilisateurs</a>
 				</h1>
 			{% else %}
 				<h1 class="alert alert-danger" role="alert">{{ form.message }}</h1>
 				<h1 class="h3 mb-3 font-weight-normal">
-					<a href="index.php?page=utilisateur">Retourner
-																		sur la liste des utilisateurs</a>
+					<a href="index.php?page=utilisateur">Retourner sur la liste des utilisateurs</a>
 				</h1>
 			{% endif %}
 		{% endif %}

@@ -27,7 +27,7 @@ function updateControleur($twig, $db)
                     $nom = $_POST['nom'];
                     $prenom = $_POST['prenom'];
                     $role = $_POST['role'];
-                    $id = $_POST['id'];
+                    $id = $_GET['id'];
                     $exec = $utilisateur->update($id, $role, $nom, $prenom);
                     if (!$exec) {
                         $form['valide'] = false;
@@ -36,13 +36,12 @@ function updateControleur($twig, $db)
                         $form['valide'] = true;
                         $form['message'] = 'Modification réussie';
                     }
-                    header('Location:index.php?page=update&id='.$_GET['id']);
                 } else {
-
                     $form['message'] = 'Utilisateur non précisé';
                 }
                 
             }
+            var_dump($form['valide'], $form['message']);
             echo $twig->render('employes/RH/update.html.twig', array('form' => $form,'employe'=>$unEmploye));
         }
     }

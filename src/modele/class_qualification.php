@@ -9,7 +9,7 @@ class Qualification{
         $this->db = $db;
         
 
-        $this->select = $this->db->prepare("SELECT * FROM `Qualification` WHERE true");
+        $this->select = $this->db->prepare("SELECT * FROM `Qualification`");
     }
     
     public function select()
